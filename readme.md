@@ -22,7 +22,7 @@ This repository contains a collection of Lua scripts designed to extend Wireshar
    - A specialized dissector that processes RTP packets carrying H.265 streams (payload type 33).  
    - Extracts h.265 stream from pcap file and saves to new file. Can be played later e.g. in VLC.
 
-4. **ja_tls.lua**:
+4. **ja3_tls.lua**:
    - This Lua script is a Wireshark plugin for analyzing TLS traffic.
    - It extracts JA3 and JA3S fingerprints from ClientHello and ServerHello messages and displays them in the packet details tree.
    - The script also performs basic anomaly detection, such as spotting possible data exfiltration or large downloads.
