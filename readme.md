@@ -22,6 +22,12 @@ This repository contains a collection of Lua scripts designed to extend Wireshar
    - A specialized dissector that processes RTP packets carrying H.265 streams (payload type 33).  
    - Extracts h.265 stream from pcap file and saves to new file. Can be played later e.g. in VLC.
 
+4. **ja_tls.lua**:
+   - This Lua script is a Wireshark plugin for analyzing TLS traffic.
+   - It extracts JA3 and JA3S fingerprints from ClientHello and ServerHello messages and displays them in the packet details tree.
+   - The script also performs basic anomaly detection, such as spotting possible data exfiltration or large downloads.
+   - Additionally, it provides a Tools menu option to export all collected session statistics into a CSV file on the user’s Desktop.
+
 ## Installation
 
 To utilize these plugins in Wireshark, place the Lua scripts in the appropriate directory based on your operating system:
@@ -42,6 +48,7 @@ Instead of restarting Wireshark, you can reload the Lua plugins dynamically:
 - For **check_ipinfo.lua**, a **Check IPinfo** button will appear in the **Tools** menu to activate its functionality.
 - For **rtp_h265_typ33_extractor.lua**, an **Extract H265 from RTP** button will appear in the **Tools** menu to enable extraction.
 - **check_asn.lua** automatically adds an `asn` field to packet details and is ready for use immediately after loading, requiring no additional actions beyond placing the pre-downloaded database in the correct location.
+- **ja3_tls.lua** automatically adds an `TLS JA3/JA3S Analysis` field to packet details and is ready for use immediately after loading. To export all fingerprints and session statistics go to menu Tools → Export JA3 Analysis. A CSV file named tls_fingerprints.csv will be saved on your Desktop.
 
 ## Compatibility
 
