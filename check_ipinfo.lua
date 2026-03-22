@@ -21,6 +21,11 @@ local function open_ip_info()
     local function callback(input)
         -- Check if the user entered a valid IP address (non-empty string)
         if input and input ~= "" then
+            -- Validate IP address format to prevent command injection
+            if not input:match("^%d+%.%d+%.%d+%.%d+$") and not input:match("^[%x:]+$") then
+                print("\226\157\140 Invalid IP address format")
+                return
+            end
             local url = "https://ipinfo.io/" .. input  -- Construct the lookup URL
             local cmd  -- Variable to store the command that will open the URL
 

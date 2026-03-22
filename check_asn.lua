@@ -12,10 +12,10 @@
 local asn_proto = Proto("ASN_Info", "ASN Information") 
 
 -- Define ASN and organization fields for Wireshark display
-src_asn_field = ProtoField.string("asn_info.src", "Source ASN")
-src_org_field = ProtoField.string("asn_info.src_org", "Source Organization")
-dst_asn_field = ProtoField.string("asn_info.dst", "Destination ASN")
-dst_org_field = ProtoField.string("asn_info.dst_org", "Destination Organization")
+local src_asn_field = ProtoField.string("asn_info.src", "Source ASN")
+local src_org_field = ProtoField.string("asn_info.src_org", "Source Organization")
+local dst_asn_field = ProtoField.string("asn_info.dst", "Destination ASN")
+local dst_org_field = ProtoField.string("asn_info.dst_org", "Destination Organization")
 
 asn_proto.fields = { src_asn_field, src_org_field, dst_asn_field, dst_org_field }
 
